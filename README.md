@@ -12,6 +12,7 @@ npm create astro@latest -- --template blog
 
 ![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
 
+
 Features:
 
 - ✅ Minimal styling (make it your own!)
@@ -45,6 +46,35 @@ There's nothing special about `src/components/`, but that's where we like to put
 The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
 
 Any static assets, like images, can be placed in the `public/` directory.
+
+
+## How to Contribute
+
+1. **Fork the repository**: Click the "Fork" button at the top right of the repository page.
+
+2. **Clone your fork**: Clone your forked repository to your local machine.
+
+3. **Create a branch**: Create a new branch for your feature or bug fix.
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. **Make changes**: Implement your feature or bug fix.
+
+5. **Commit changes**: Commit your changes with a clear and descriptive commit message.
+
+   ```bash
+   git commit -m "Add feature: your feature name"
+   ```
+
+6. **Push to your fork**: Push your changes to your forked repository.
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+7. **Create a Pull Request**: Go to the original repository and create a pull request from your forked branch.
 
 ## 🧞 Commands
 
