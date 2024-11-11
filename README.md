@@ -32,29 +32,37 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 1. **Fork the repository**: Click the "Fork" button at the top right of the repository page.
 
-2. **Clone your fork**: Clone your forked repository to your local machine.
+2. **Clone your fork**: Clone your forked repository to your local machine(git clone <repo-url>).
 
-3. **Create a branch**: Create a new branch for your feature or bug fix.
+3. **Install dependencies**: Once you have cloned the repository and opened it in your favourite editor open up a new terminal in the folder and type:
+
+   ```bash
+   npm install
+   ```
+4. **Create a branch**: Create a new branch for your feature or bug fix.
 
    ```bash
    git checkout -b feature/your-feature-name
    ```
-
-4. **Make changes**: Implement your feature or bug fix.
-
-5. **Commit changes**: Commit your changes with a clear and descriptive commit message.
+5. **Run the project**:
+  ```bash
+   npm run dev
+   ```
+6. **Make changes**: Implement your feature or bug fix.
+   
+8. **Commit changes**: Commit your changes with a clear and descriptive commit message.
 
    ```bash
    git commit -m "Add feature: your feature name"
    ```
 
-6. **Push to your fork**: Push your changes to your forked repository.
+9. **Push to your fork**: Push your changes to your forked repository.
 
    ```bash
    git push origin feature/your-feature-name
    ```
 
-7. **Create a Pull Request**: Go to the original repository and create a pull request from your forked branch.
+10. **Create a Pull Request**: Go to the original repository and create a pull request from your forked branch.
 
 ## 🧞 Commands
 
