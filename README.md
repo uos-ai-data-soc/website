@@ -52,17 +52,23 @@ Any static assets, like images, can be placed in the `public/` directory.
    
 8. **Commit changes**: Commit your changes with a clear and descriptive commit message.
 
+   
+   ```bash
+   git add <files you have modified>
+   ```
+   then
+   
    ```bash
    git commit -m "Add feature: your feature name"
    ```
 
-9. **Push to your fork**: Push your changes to your forked repository.
+10. **Push to your fork**: Push your changes to your forked repository.
 
    ```bash
    git push origin feature/your-feature-name
    ```
 
-10. **Create a Pull Request**: Go to the original repository and create a pull request from your forked branch.
+11. **Create a Pull Request**: Go to the original repository and create a pull request from your forked branch.
 
 ## 🧞 Commands
 
