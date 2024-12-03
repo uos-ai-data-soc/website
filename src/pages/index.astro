@@ -11,10 +11,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
 		<main>
 			<div class="animated" >
-				<h1>University of Surrey</h1>
+				<Header />
+				<div class = "MainPage">
+					<img src="../../public/AI_Logo.png" alt="AI_Logo" />
+					<h2><span class="WhiteText">University of</span> <span class="YellowText">Surrey</span></h2>
+					<h1>AI and Data Science Society</h1>
+					<h3>From hackathons to guest lectures, we unite AI and data <br>
+						science enthusiasts. Network, learn, and have fun.</h3>
+					<a href="https://surreyunion.org/activity/clubs-societies/" target="_blank">Get Membership</a>
+				</div>
 			</div>
 			
 		</main>
@@ -53,6 +60,57 @@ VANTA.NET({
 	.animated h1{
 		z-index: 999;
 		color: beige;
+	}
+	.MainPage {
+		background-color: rgb(116, 116, 116); /*remove*/
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		top: 100px;
+		padding: 0px 40px;
+		text-align: center;
+	}
+	.MainPage img{
+		background-color: rgb(204, 204, 204); /*remove*/
+		width: 230px;
+		height: 269px;
+		margin: 3rem;
+	}
+	.MainPage h2{
+		background-color: rgb(204, 204, 204); /*remove*/
+		font-size: 2rem;
+		font-weight: 700;
+	}
+	.WhiteText {
+		color: rgb(255, 255, 255);
+	}
+	.YellowText {
+		color: #EED101;
+	}
+	.MainPage h1{
+		background-color: rgb(204, 204, 204); /*remove*/
+		color: white;
+		font-size: 4rem;
+		font-weight: 700;
+		margin: 2rem;
+	}
+	.MainPage h3{
+		background-color: rgb(204, 204, 204); /*remove*/
+		color: white;
+		font-size: 2rem;
+	}
+	.MainPage a{
+		color: rgb(0, 0, 0);
+		background-color: white;
+		font-size: 2rem;
+		font-weight: 600;
+		text-decoration: none;
+
+		padding: 15px 40px;
+		margin: 3rem;
+		border-radius: 10px;
 	}
 </style>
 </html>
