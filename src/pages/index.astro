@@ -15,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<div class="animated" >
 				<Header />
 				<div class = "MainPage">
-					<img src="../../public/AI_Logo.png" alt="AI_Logo" />
+					<img src="/AI_Logo.png" alt="AI_Logo" />
 					<h2><span class="WhiteText">University of</span> <span class="YellowText">Surrey</span></h2>
 					<h1>AI and Data Science Society</h1>
 					<h3>From hackathons to guest lectures, we unite AI and data <br>
@@ -23,12 +23,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<a href="https://surreyunion.org/activity/clubs-societies/" target="_blank">Get Membership</a>
 				</div>
 			</div>
-			
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 		</main>
 		<Footer />
 	</body>
+</html>
 	<!-- always add is:inline for new script imports -->
-	<script  is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script  is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script is:inline  src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 <script>
 	//ignore this error
@@ -50,20 +52,7 @@ VANTA.NET({
 </script>
 
 <style>
-	body{
-		height: 120vh;
-		background: linear-gradient(10deg, #8C05C1, #020918);
-	}
-	.animated{
-		min-height: 960px;
-	}
-	.animated h1{
-		z-index: 999;
-		color: beige;
-	}
 	.MainPage {
-		background-color: rgb(116, 116, 116); /*remove*/
-
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -71,15 +60,14 @@ VANTA.NET({
 		top: 100px;
 		padding: 0px 40px;
 		text-align: center;
+		margin: 77px 0px;
 	}
 	.MainPage img{
-		background-color: rgb(204, 204, 204); /*remove*/
 		width: 230px;
 		height: 269px;
 		margin: 3rem;
 	}
 	.MainPage h2{
-		background-color: rgb(204, 204, 204); /*remove*/
 		font-size: 2rem;
 		font-weight: 700;
 	}
@@ -90,14 +78,57 @@ VANTA.NET({
 		color: #EED101;
 	}
 	.MainPage h1{
-		background-color: rgb(204, 204, 204); /*remove*/
 		color: white;
 		font-size: 4rem;
 		font-weight: 700;
 		margin: 2rem;
 	}
 	.MainPage h3{
-		background-color: rgb(204, 204, 204); /*remove*/
+		color: white;
+		font-size: 2rem;
+	}
+	.MainPage a{
+		color: rgb(0, 0, 0);
+		background-color: white;
+		font-size: 2rem;
+		font-weight: 600;
+		text-decoration: none;
+
+		padding: 15px 40px;
+		margin: 3rem;
+		border-radius: 10px;
+	}
+	.MainPage {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		top: 100px;
+		padding: 0px 40px;
+		text-align: center;
+	}
+	.MainPage img{
+		width: 230px;
+		height: 269px;
+		margin: 3rem;
+	}
+	.MainPage h2{
+		font-size: 2rem;
+		font-weight: 700;
+	}
+	.WhiteText {
+		color: rgb(255, 255, 255);
+	}
+	.YellowText {
+		color: #EED101;
+	}
+	.MainPage h1{
+		color: white;
+		font-size: 4rem;
+		font-weight: 700;
+		margin: 2rem;
+	}
+	.MainPage h3{
 		color: white;
 		font-size: 2rem;
 	}
@@ -113,5 +144,4 @@ VANTA.NET({
 		border-radius: 10px;
 	}
 </style>
-</html>
 
