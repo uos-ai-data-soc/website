@@ -7,10 +7,10 @@ import { SITE_TITLE } from '../consts';
 <header>
 
 	<nav>
-		<div class = "Icons">
-			<div class = "AIIcon"><img src="/AI_Logo.png" alt="AI Logo" /></div>
-			<div class = "Separator"></div>
-			<div class = "SurreyIcon"><img src="/Surrey_Logo.png" alt="Surrey Logo" /></div>
+		<div class="Icons">
+			<img src="/AI_Logo.png" alt="AI_Logo" id="AILogo"/>
+			<div class="Separator"></div>
+			<img src="/Surrey_Logo.png" alt="Surrey_Logo" id = "SurreyLogo"/>
 		</div>
 
 		<ul>
@@ -25,20 +25,25 @@ import { SITE_TITLE } from '../consts';
 </header>
 
 <style>
+	header {
+		top: 0;
+		position: fixed;
+		width: 100%;
+		background-color: rgba(0, 0, 0);
+		z-index: 9999;
+	}
+
 	nav {
 		height: 77px;
-		background-color: rgba(255, 255, 255, 0.049);
 		border-bottom: 2px solid #6d42fc;
-
+		
 		display: flex;
 		justify-content: center; /* Center horizontally */
 		align-items: center; /* Center vertically */
-		position: relative;
 	}
 
-	 /* Styling for the icon on the left */
+	 /* Styling for the icons on the left */
 	.Icons {
-		
 		width: 200px;
 		height: 70px;
 		position: absolute; /* Position the icon to the left */
@@ -51,19 +56,13 @@ import { SITE_TITLE } from '../consts';
 		flex-wrap: nowrap;
 	}
 
-	.AIIcon, .SurreyIcon {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.AIIcon img{
-		
+	#AILogo{
+		background-color: rgb(0, 0, 0);
 		width: 55px;
 	}
 
-	.SurreyIcon img{
-		
+	#SurreyLogo{
+		background-color: rgb(0, 0, 0);
 		width: 120px;
 	}
 
@@ -75,7 +74,6 @@ import { SITE_TITLE } from '../consts';
 	}
 
 	nav ul{
-		
 		list-style: none; /* Remove default bullet points */
 		display: flex; /* Display list items inline */
 		gap: 3rem; /* Add spacing between items */
