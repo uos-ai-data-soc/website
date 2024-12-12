@@ -1,0 +1,2 @@
+# Redirect /admin to 404 in production
+/admin/* /404 404
