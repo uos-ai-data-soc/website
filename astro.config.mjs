@@ -22,7 +22,9 @@ export default defineConfig({
                 src: './src/assets/AI_Logo.png',
                 alt: 'Surrey University | AI and Data Science Society',
             },
+
         })
     ],
+   
     output: 'server',
 });

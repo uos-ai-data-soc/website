@@ -1,6 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { docsSchema } from '@astrojs/starlight/schema';
 import { blogSchema } from 'starlight-blog/schema'
+import { defineConfig } from 'tinacms';
 
 
 
@@ -30,11 +31,15 @@ const people = defineCollection({
 });
 
 export const collections = { 
-	docs: defineCollection({ schema: docsSchema({
-		extend: (context) => blogSchema(context)
-	  }) }),
-	
+	docs: defineCollection({ 
+		schema: docsSchema({
+			extend: (context) => blogSchema(context).extend({
+				date: z.coerce.date().optional()	,
+				author: z.string().optional(),
+			})
+		}) 
+	}),
 	events,
 	people 
-  };
+};
   

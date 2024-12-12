@@ -1,0 +1,28 @@
+import { TinaProvider, TinaCMS, useCMS } from 'tinacms';
+import TinaSidebar from 'tinacms/dist/react-tinacms-sidebar';
+import TinaToolbar from 'tinacms/dist/react-tinacms-toolbar';
+import config from '../../tina/config';
+import { createContext } from 'react';
+
+const cms = new TinaCMS({
+  enabled: true,
+  toolbar: true,
+  sidebar: true,
+  plugins: [],
+});
+
+<html lang="en">
+  <head>
+    <title>TinaCMS Admin</title>
+  </head>
+  <body>
+    <TinaProvider cms={cms}>
+      <TinaToolbar />
+      <TinaSidebar />
+      <div style="padding: 20px;">
+        <h1>Welcome to TinaCMS!</h1>
+        <p>Use the sidebar to navigate and edit your content.</p>
+      </div>
+    </TinaProvider>
+  </body>
+</html>

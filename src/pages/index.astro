@@ -5,6 +5,7 @@ import Events from '../components/Events.astro';
 import People from '../components/People.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
 ---
 
 <!doctype html>
@@ -14,149 +15,236 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<main>
-			<div class="animated" >
+			<div class="animated">
 				<Header />
-				<div class = "MainPage">
-					<img src="/AI_Logo.png" alt="AI_Logo" />
+				<div class="MainPage">
+					<img src="/AI_Logo.png" alt="AI Logo" class="logo" />
 					<h2><span class="WhiteText">University of</span> <span class="YellowText">Surrey</span></h2>
 					<h1>AI and Data Science Society</h1>
-					<h3>From hackathons to guest lectures, we unite AI and data <br>
-						science enthusiasts. Network, learn, and have fun.</h3>
-					<a href="https://surreyunion.org/activity/clubs-societies/" target="_blank">Get Membership</a>
+					<h3>From hackathons to guest lectures, we unite AI and data<br>science enthusiasts. Network, learn, and have fun.</h3>
+					<a href="https://surreyunion.org/activity/clubs-societies/" target="_blank" class="membership-btn">Get Membership</a>
 				</div>
 			</div>
-			<br>
+			<div class="events" id="events">
+				<br>
+				<br>
+				
 			
-			<Events id="events" />
-			<People id="committee" />
+				<Events />
+			</div>
+			
+			<div class="committee" id="committee">
+				<People />
+			</div>
+			
+	
 		</main>
 		<Footer />
 	</body>
 </html>
-	<!-- always add is:inline for new script imports -->
-<script  is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script is:inline  src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 <script>
 	//ignore this error
-VANTA.NET({
-  el: ".animated",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0x53039b,
-  backgroundColor: 0x0,
-  points: 7.00,
-  maxDistance: 30.00,
-  spacing: 19.00
-})
+	VANTA.NET({
+	  el: ".animated",
+	  mouseControls: true,
+	  touchControls: true,
+	  gyroControls: false,
+	  minHeight: 200.00,
+	  minWidth: 200.00,
+	  scale: 1.00,
+	  scaleMobile: 1.00,
+	  color: 0x53039b,
+	  backgroundColor: 0x0,
+	  points: 7.00,
+	  maxDistance: 30.00,
+	  spacing: 19.00
+	})
 </script>
 
+
+
 <style>
-	.animated{
+	.animated {
 		min-height: 960px;
+		position: relative;
 	}
-	.animated h1{
+
+	.animated h1 {
 		z-index: 999;
 		color: beige;
 	}
 
-	body{
+	body {
 		min-height: 120vh;
 		background: linear-gradient(10deg, #8C05C1, #020918);
+		margin: 0;
+		padding: 0;
 	}
+
 	.MainPage {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		top: 100px;
-		padding: 0px 40px;
+		padding: 20px;
 		text-align: center;
-		margin: 77px 0px;
+		margin: 77px 0;
 	}
-	.MainPage img{
+
+	.MainPage img.logo {
 		width: 230px;
-		height: 269px;
+		height: auto;
 		margin: 3rem;
+		max-width: 100%;
+		height: auto;
 	}
-	.MainPage h2{
+
+	.MainPage h2 {
 		font-size: 2rem;
 		font-weight: 700;
 	}
-	
+
 	.WhiteText {
 		color: rgb(255, 255, 255);
 	}
+
 	.YellowText {
 		color: #EED101;
 	}
-	.MainPage h1{
+
+	.MainPage h1 {
 		color: white;
 		font-size: 4rem;
 		font-weight: 700;
-		margin: 2rem;
+		margin: 2rem 0;
 	}
-	.MainPage h3{
+
+	.MainPage h3 {
 		color: white;
 		font-size: 2rem;
+		line-height: 1.5;
 	}
-	.MainPage a{
+
+	.MainPage a.membership-btn {
 		color: rgb(0, 0, 0);
 		background-color: white;
 		font-size: 2rem;
 		font-weight: 600;
 		text-decoration: none;
-
 		padding: 15px 40px;
-		margin: 3rem;
+		margin: 3rem 0;
 		border-radius: 10px;
+		transition: background-color 0.3s, color 0.3s;
 	}
+
+	.MainPage a.membership-btn:hover {
+		background-color: #EED101;
+		color: rgb(0, 0, 0);
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 1024px) {
+		.MainPage {
+			margin-top: 70px;
+		}
+
+		.MainPage h1 {
+			font-size: 3rem;
+		}
+
+		.MainPage h2 {
+			font-size: 1.8rem;
+		}
+
+		.MainPage h3 {
+			font-size: 1.8rem;
+		}
+
+		.MainPage img.logo {
+			width: 200px;
+			margin: 2rem;
+		}
+
+		.MainPage a.membership-btn {
+			font-size: 1.8rem;
+			padding: 12px 35px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.animated {
+			min-height: 600px;
+		}
+
+		.MainPage {
+			margin-top: 70px;
+			padding: 15px;
+		}
+
+		.MainPage h1 {
+			font-size: 2.5rem;
+		}
+
+		.MainPage h2 {
+			font-size: 1.5rem;
+		}
+
+		.MainPage h3 {
+			font-size: 1.5rem;
+		}
+
+		.MainPage img.logo {
+			width: 150px;
+			margin: 1.5rem;
+		}
+
+		.MainPage a.membership-btn {
+			font-size: 1.5rem;
+			padding: 10px 30px;
+			margin: 2rem 0;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.animated {
+			min-height: 400px;
+		}
+
+		.MainPage {
+			margin-top: 70px;
+			padding: 10px;
+		}
+
+		.MainPage h1 {
+			font-size: 2rem;
+		}
+
+		.MainPage h2 {
+			font-size: 1.2rem;
+		}
+
+		.MainPage h3 {
+			font-size: 1rem;
+		}
+
+		.MainPage img.logo {
+			width: 120px;
+			margin: 1rem;
+		}
+
+		.MainPage a.membership-btn {
+			font-size: 1.2rem;
+			padding: 8px 20px;
+			margin: 1.5rem 0;
+		}
+	}
+
+	/* Ensure Events and Committee sections have adequate padding on smaller screens */
+	.events, .committee {
+		padding: 20px;
+	}
+
 </style>
-
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('a[href^="/#"]');
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                const hashIndex = href.indexOf('#');
-                if (hashIndex === -1) return;
-
-                const targetId = href.substring(hashIndex + 1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Update the URL without scrolling
-                    history.pushState(null, '', `/#${targetId}`);
-                }
-            });
-        });
-
-        // Handle initial hash on page load
-        if (window.location.hash) {
-            const targetId = window.location.hash.substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                // Delay to ensure elements are rendered
-                setTimeout(() => {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 100);
-            }
-        }
-    });
-</script>
-
-
