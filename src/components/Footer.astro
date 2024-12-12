@@ -4,32 +4,34 @@ const today = new Date();
 
 <footer>
 	<div class="Container">
-		<div class="Item">
+		<div class="Item About">
 			About
-			<div class="Subtext">
-				From hackathons to guest lectures, we unite AI and data science
-				enthusiasts. Network, learn, and have fun
-			</div>
 			<div class="Icons">
 				<img src="/AI_Logo.png" alt="AI_Logo" id="AILogo"/>
 				<div class="Separator"></div>
-				<img src="/Surrey_Logo.png" alt="Surrey_Logo" id = "SurreyLogo"/>
+				<img src="/Surrey_Logo.png" alt="Surrey_Logo" id="SurreyLogo"/>
 			</div>
-			<div class="Copyright">
-				Copyright © Surrey AI and Data Science Society
+			<div class="Subtext">
+				We are the University of Surrey's AI and Data Science Society. Our mission is to create a community of students passionate about AI and Data Science.
 			</div>
 		</div>
 
-		<div class="Item">
-			Quick Links
-			<div class="Subtext">Events</div>
-			<div class="Subtext">Blog</div>
-			<div class="Subtext">Resources</div>
-			<div class="Subtext">Committee</div>
-			<div class="Subtext">Gallery</div>
+		<div class="Item QuickLinks">
+			<p>Quick Links</p>
+			<button class="collapse-btn" aria-expanded="false">
+				Quick Links
+				<span class="arrow">▼</span>
+			</button>
+			<div class="collapsible-content">
+				<a href="#events">Events</a>
+				<a href="#committee">Committee</a>
+				<a href="/blog">Blog</a>
+				<a href="/learning-resources">Resources</a>
+				<a href="/gallery">Gallery</a>
+			</div>
 		</div>
 
-		<div class="Item">
+		<div class="Item Contact">
 			Contacts
 			<div class="Icons2">
 				<img src="/Whatsapp_Logo.png" alt="Whatsapp_Logo" id="WhatsappLogo"/>
@@ -52,82 +54,203 @@ const today = new Date();
 <style>
 	footer {
 		background-color: rgb(0, 0, 0);
+		width: 102%;
 	}
 
 	.Container {
 		display: flex;
 		justify-content: space-between;
 		padding: 50px 120px;
+		flex-wrap: wrap;
+		gap: 2rem;
 	}
 
 	.Item {
 		color: white;
-		font-size: 50px;
+		font-size: 2.5rem;
 		padding: 20px;
-		width: 300px;
+		min-width: 300px;
+		flex: 1;
 	}
 
-	.Space{
-		height:20px;
+	.Space {
+		height: 20px;
 	}
 
 	.Subtext {
 		color: white;
-		font-size: 20px;
-
-		margin-top: 30px;
+		font-size: 1rem;
+		margin-top: 1.5rem;
+		line-height: 1.5;
 	}
 
-	.Icons {
-		width: 200px;
-		height: 70px;
-		gap: 0.75rem; /* Add spacing between items */
-		margin-top: 40px;
-
+	.Icons, .Icons2 {
 		display: flex;
-		justify-content: center; /* Center horizontally */
-		align-items: center; /* Center vertically */
-		flex-wrap: nowrap;
+		gap: 0.75rem;
+		margin-top: 1.5rem;
+		align-items: center;
 	}
 
-	#AILogo{
+	#AILogo {
 		width: 55px;
+		height: auto;
 	}
 
-	#SurreyLogo{
+	#SurreyLogo {
 		width: 120px;
+		height: auto;
 	}
 
 	.Separator {
-		background-color: rgb(255, 255, 255);
 		width: 2px;
-		height: 60px;
-		flex-shrink: 0; /* Prevents it from shrinking */
+		height: 40px;
+		background-color: white;
 	}
 
-	.Copyright {
-		color: white;
-		font-size: 15px;
-
-		margin-top: 50px;
+	.Icons2 img {
+		width: 40px;
+		height: 40px;
+		transition: opacity 0.3s ease;
 	}
 
-	.Item li {
-		font-size: 20px;
-		margin-top: 20px;
+	.Icons2 img:hover {
+		opacity: 0.7;
+		cursor: pointer;
 	}
 
-	.Icons2 {
+	/* Quick Links Styling */
+	.QuickLinks {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: 30px;
-		width: 200px;
+		flex-direction: column;
 	}
 
-	#WhatsappLogo, #InstagramLogo, #DiscordLogo{
-		width: 50px;
-		height: 50px;
+	.collapse-btn {
+		background: none;
+		border: none;
+		color: white;
+		font-size: 2.5rem;
+		text-align: left;
+		padding: 0;
+		cursor: pointer;
+		display: none;
 	}
 
+	.arrow {
+		font-size: 1rem;
+		margin-left: 0.5rem;
+		transition: transform 0.3s ease;
+	}
+
+	.collapsible-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.collapsible-content a {
+		color: white;
+		text-decoration: none;
+		font-size: 1rem;
+		transition: opacity 0.3s ease;
+	}
+
+	.collapsible-content a:hover {
+		opacity: 0.7;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 1200px) {
+		.Container {
+			padding: 40px 60px;
+		}
+
+		.Item {
+			font-size: 2rem;
+			min-width: 250px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.Container {
+			padding: 30px 20px;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.Item {
+			font-size: 1.8rem;
+			padding: 15px;
+			width: 100%;
+		}
+		.Item  p{
+			display: none;
+		}
+		/* Show collapse button for Quick Links */
+		.collapse-btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+
+		.collapse-btn[aria-expanded="true"] .arrow {
+			transform: rotate(180deg);
+		}
+
+		.collapsible-content {
+			display: none;
+			margin-top: 1rem;
+		}
+
+		.collapsible-content.active {
+			display: flex;
+		}
+
+		.Icons, .Icons2 {
+			justify-content: flex-start;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.Container {
+			padding: 20px 10px;
+		}
+
+		.Item {
+			font-size: 1.5rem;
+			padding: 10px;
+		}
+
+		.Subtext {
+			font-size: 0.9rem;
+		}
+
+		#AILogo {
+			width: 45px;
+		}
+
+		#SurreyLogo {
+			width: 100px;
+		}
+
+		.Icons2 img {
+			width: 35px;
+			height: 35px;
+		}
+	}
 </style>
+
+<script>
+	// Add this script for the collapsible functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const collapseBtn = document.querySelector('.collapse-btn');
+		const content = document.querySelector('.collapsible-content');
+
+		collapseBtn?.addEventListener('click', () => {
+			const isExpanded = collapseBtn.getAttribute('aria-expanded') === 'true';
+			collapseBtn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+			content?.classList.toggle('active');
+		});
+	});
+</script>

@@ -72,56 +72,140 @@ const events = (await getCollection("events")).sort(
         position: relative;
         border-radius: 16px;
         border: 1px solid #ffffff4b;
-
-        
     }
     .event-wrapper{
         width: 90%;
     }
     .event{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
         align-items: center;
         padding-top: 20px;
         padding-bottom: 20px;
-        border-bottom: 1px solid #ffffff45
-        
-       
+        border-bottom: 1px solid #ffffff45;
+        width: 100%;
     }
     .pill{
         background-color: #FB4521;
         padding: 16px 20px;
         border-radius: 50px;
+        white-space: nowrap;
+        max-width: 90px;
     }
     .mid{
         text-align: center;
-        margin-left: 3rem;
+
     }
     .mid .title{
         font-size: 1.8rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
+        min-width: 200px;
     }
     .mid .location{
         font-size: 0.8rem;
         letter-spacing: 0.1rem;
     }
-
     .right{
+        margin: 0 auto;
         font-size: 0.8rem;
         text-wrap: wrap;
         color: #ffffffc7;
         max-width: 200px;
     }
-    
     .EventsTitle{
-		font-size: 3rem;
-		background: linear-gradient(60deg, #D9D9D9 0%, #737373 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    text-align: center;
-	}
+        font-size: 3rem;
+        background: linear-gradient(60deg, #D9D9D9 35%, #737373 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    @media (max-width: 1024px) {
+        .event-container {
+            padding: 1.5rem;
+        }
+
+        .event {
+            gap: 1.5rem;
+        }
+
+        .mid .title {
+            font-size: 1.5rem;
+        }
+
+        .EventsTitle {
+            font-size: 2.5rem;
+        }
+    }
+    @media (max-width: 768px) {
+        .events-component {
+            padding: 10px;
+        }
+
+        .event-container {
+            padding: 1rem;
+        }
+
+        .event {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .left {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mid {
+            text-align: center;
+        }
+
+        .right {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .pill {
+            padding: 12px 16px;
+            font-size: 0.9rem;
+        }
+
+        .mid .title {
+            font-size: 1.3rem;
+        }
+
+        .mid .location {
+            font-size: 0.75rem;
+        }
+
+        .EventsTitle {
+            font-size: 2rem;
+        }
+        @media (max-width: 480px) {
+        .event-container {
+            padding: 0.8rem;
+        }
+
+        .event {
+            padding: 1rem 0;
+        }
+
+        .mid .title {
+            font-size: 1.1rem;
+        }
+
+        .right {
+            font-size: 0.75rem;
+        }
+
+        .EventsTitle {
+            font-size: 1.8rem;
+        }
+        }
 </style>
+

@@ -74,4 +74,91 @@ const people = await getCollection('people');
         font-weight: 400;
         opacity: 0.7;
     }
+
+     /* Tablet Styles */
+     @media (max-width: 1024px) {
+        .people-component {
+            margin: 4rem auto;
+        }
+
+        .PeopleTitle {
+            font-size: 2.5rem;
+        }
+
+        .person-card {
+            padding: 1.5rem;
+            gap: 1.5rem;
+        }
+
+        .person-card img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+     /* Mobile Styles */
+     @media (max-width: 768px) {
+        .people-component {
+            margin: 3rem auto;
+            padding: 0 15px;
+        }
+
+        .PeopleTitle {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .people-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .person-card {
+            padding: 1.2rem;
+            gap: 1.2rem;
+        }
+
+        .person-info h3 {
+            font-size: 1.3rem;
+        }
+
+        .person-info p {
+            font-size: 0.9rem;
+        }
+    }
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+        .people-component {
+            margin: 2rem auto;
+            padding: 0 10px;
+        }
+
+        .PeopleTitle {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .person-card {
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .person-card img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .person-info h3 {
+            font-size: 1.1rem;
+        }
+
+        .person-info p {
+            font-size: 0.8rem;
+        }
+
+        .person-info a {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+        }
+    }
 </style>
