@@ -5,9 +5,12 @@ type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
 
-const { pathname } = Astro.url;
-const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + subpath?.[0];
+const { pathname, hash } = Astro.url;
+const linkPath = href.split('#')[0];
+const linkHash = href.split('#')[1];
+const isActive = 
+    (linkPath === pathname || (pathname === '/' && linkPath === '')) &&
+    (linkHash ? hash === `#${linkHash}` : false);
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>

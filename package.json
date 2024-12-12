@@ -13,6 +13,9 @@
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
-    "astro": "^4.16.10"
+    "@astrojs/starlight": "^0.29.3",
+    "astro": "^4.16.10",
+    "astro-expressive-code": "^0.38.3",
+    "starlight-blog": "^0.15.0"
   }
 }

@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';  
+
+const people = await getCollection('people');
+---
+
+<div class="people-component">
+    <h2 class="PeopleTitle">Your committee</h2>
+    <div class="people-grid">
+        {people.map((person) => (
+            <div class="person-card">
+                <img src={person.data.image} alt={person.data.name} />
+                <div class="person-info">
+                    <h3>{person.data.name}</h3>
+                    <p>{person.data.position}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .people-component{
+       margin-top: 10rem;
+       min-width: 100%;
+       margin-bottom: 10rem;
+    }
+    .PeopleTitle{
+        font-size: 3rem;
+		background: linear-gradient(60deg, #D9D9D9 45%, #737373 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    text-align: center;
+    }
+    .people-grid{
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 6rem;
+        width: 80%;
+    }
+    .person-card{
+        display:flex;
+        align-items: center;
+        padding: 2rem;
+        gap: 3rem;
+        text-align: center;
+        background-color: #2f2f2f7a;
+        border-radius: 16px;
+        border: 1px solid #ffffff4b;
+        color: white;
+      
+    }
+    .person-card:hover img{
+        opacity: 1;
+        transition: 0.7s ease-in-out;
+        
+    }
+    img{
+        border-radius: 7px;
+        width: 196px;
+        opacity: 0.7;
+    }
+
+    .person-info h3{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .person-info p{
+        font-size: 1.5rem;
+        font-weight: 400;
+        opacity: 0.7;
+    }
+</style>

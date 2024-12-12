@@ -1,0 +1,127 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const events = (await getCollection("events")).sort(
+    (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+);
+---
+
+<div class="events-component">
+    <h2 class="EventsTitle">Events</h2>
+    <div class="event-container">
+    {events.length > 0 ? (
+        events.map((event) => (
+           <div class="event-wrapper">
+
+         
+                <div class="event">
+                   
+                    <div class="left">
+                        <div class="pill">
+                            <p>{event.data.date.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        })}</p>
+
+                        </div>
+                        
+                    </div>
+                    <div class="mid">
+                        <div class="title">
+                            {event.data.title}
+                        </div>
+                     
+                        <div class="location">
+                            Location:{event.data.location}
+                        </div>
+                    </div>
+                    <div class="right">
+                        {event.data.description}
+                    </div>
+                </div>
+            
+            </div>
+        
+          
+        ))
+    ) : (
+        <div class="no-events">
+            <p>No upcoming events</p>
+        </div>
+    )}
+</div>
+</div>
+<style>
+    .events-component{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        min-width: 80%;
+    }
+    .event-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        height: 480px;
+        width: 80%;
+        position: relative;
+        border-radius: 16px;
+        border: 1px solid #ffffff4b;
+
+        
+    }
+    .event-wrapper{
+        width: 90%;
+    }
+    .event{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ffffff45
+        
+       
+    }
+    .pill{
+        background-color: #FB4521;
+        padding: 16px 20px;
+        border-radius: 50px;
+    }
+    .mid{
+        text-align: center;
+        margin-left: 3rem;
+    }
+    .mid .title{
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .mid .location{
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .right{
+        font-size: 0.8rem;
+        text-wrap: wrap;
+        color: #ffffffc7;
+        max-width: 200px;
+    }
+    
+    .EventsTitle{
+		font-size: 3rem;
+		background: linear-gradient(60deg, #D9D9D9 0%, #737373 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-align: center;
+	}
+</style>

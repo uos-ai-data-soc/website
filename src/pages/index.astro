@@ -1,6 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Events from '../components/Events.astro';
+import People from '../components/People.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -23,8 +25,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<a href="https://surreyunion.org/activity/clubs-societies/" target="_blank">Get Membership</a>
 				</div>
 			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+			<br>
+			
+			<Events id="events" />
+			<People id="committee" />
 		</main>
 		<Footer />
 	</body>
@@ -59,8 +63,9 @@ VANTA.NET({
 		z-index: 999;
 		color: beige;
 	}
+
 	body{
-		height: 120vh;
+		min-height: 120vh;
 		background: linear-gradient(10deg, #8C05C1, #020918);
 	}
 	.MainPage {
@@ -82,6 +87,7 @@ VANTA.NET({
 		font-size: 2rem;
 		font-weight: 700;
 	}
+	
 	.WhiteText {
 		color: rgb(255, 255, 255);
 	}
@@ -110,5 +116,47 @@ VANTA.NET({
 		border-radius: 10px;
 	}
 </style>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a[href^="/#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                const hashIndex = href.indexOf('#');
+                if (hashIndex === -1) return;
+
+                const targetId = href.substring(hashIndex + 1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Update the URL without scrolling
+                    history.pushState(null, '', `/#${targetId}`);
+                }
+            });
+        });
+
+        // Handle initial hash on page load
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                // Delay to ensure elements are rendered
+                setTimeout(() => {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        }
+    });
+</script>
 
 
