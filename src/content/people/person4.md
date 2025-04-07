@@ -1,6 +1,7 @@
 ---
-name: 'John Murray'
-position: 'CTO'
+name: Alireza Ghazavi Khrasgani
+position: Tutorials President
 socialLink: 'https://www.linkedin.com/in/john-doe-1234567890'
-image: 'person_2.jpg'
+image: alireza-ghazavi-khrasgani.jpg
 ---
+

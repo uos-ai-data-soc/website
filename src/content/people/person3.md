@@ -1,6 +1,7 @@
 ---
-name: 'John Murray'
-position: 'CTO'
+name: Deepro Banarjee
+position: Finance and Fundraising Officer
 socialLink: 'https://www.linkedin.com/in/john-doe-1234567890'
-image: 'person_2.jpg'
+image: deepro-banarjee.jpg
 ---
+

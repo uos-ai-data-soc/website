@@ -1,7 +1,7 @@
 ---
-name: John dd
-position: CEO
+name: Enes Aydin
+position: Webmaster
 socialLink: 'https://www.linkedin.com/in/john-doe-1234567890'
-image: person_2.jpg
+image: user_bot_robot_icon_146900.png
 ---
 
